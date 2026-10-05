@@ -1,26 +1,68 @@
 import React from 'react';
-import { Code2, Heart } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Brand / Logo section */}
-        <div className="flex items-center space-x-2">
-          <div className="p-1.5 rounded-lg bg-indigo-600 text-white">
-            <Code2 size={18} />
+    <footer className="border-t border-slate-800 bg-slate-950 py-12 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col space-y-8">
+        
+        {/* Top Row: Name, Title & Social Links */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide">
+              Lalita Satish Bhoi
+            </h3>
+            <p className="text-sm text-slate-400 mt-1">
+              Full Stack Developer & MCA Student
+            </p>
           </div>
-          <span className="text-base font-bold text-white">
-            Lalita<span className="text-indigo-400">.dev</span>
-          </span>
+
+          {/* Social Icons */}
+          <div className="flex items-center space-x-3">
+            {/* GitHub SVG Icon */}
+            <a 
+              href="https://github.com/lalitabhoi214" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-indigo-500 transition-all duration-300 shadow-sm flex items-center justify-center"
+              aria-label="GitHub"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
+            </a>
+
+            {/* LinkedIn SVG Icon */}
+            <a 
+              href="https://www.linkedin.com/in/lalita-bhoi-baa484421/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-indigo-500 transition-all duration-300 shadow-sm flex items-center justify-center"
+              aria-label="LinkedIn"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        {/* Copyright and signature text */}
-        <p className="text-xs text-slate-400 flex items-center space-x-1">
-          <span>Made with</span>
-          <Heart size={14} className="text-rose-500 fill-rose-500" />
-          <span>by Lalita Bhoi &copy; 2026</span>
-        </p>
+        {/* Divider */}
+        <div className="w-full h-px bg-slate-800/80"></div>
+
+        {/* Bottom Row: Navigation Links & Copyright */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          {/* Navigation Links */}
+          <div className="flex flex-wrap items-center gap-6 text-slate-400">
+            <a href="#skills" className="hover:text-indigo-400 transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-indigo-400 transition-colors">Projects</a>
+          </div>
+
+          {/* Copyright text */}
+          <p className="text-xs text-slate-500">
+            &copy; 2026 Lalita Satish Bhoi. All rights reserved.
+          </p>
+        </div>
+
       </div>
     </footer>
   );
