@@ -1,14 +1,17 @@
 import React from 'react';
 import { ChevronRight, FileText } from 'lucide-react';
 
+// Place your image inside 'src/assets/' and update the filename if needed
+import profileImg from '../assets/profile-photo.jpeg'; 
+
 export default function Hero() {
   return (
     <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-6 max-w-7xl mx-auto flex flex-col items-start justify-center overflow-hidden">
-      {/* Background ambient glowing lights */}
+      {/* Background glowing ambient light effects */}
       <div className="absolute top-10 left-10 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute top-20 right-20 w-72 h-72 bg-purple-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-      {/* Tailwind keyframe style for floating effect */}
+      {/* Smooth floating animation keyframe */}
       <style>{`
         @keyframes floatSlow {
           0%, 100% { transform: translateY(0px); }
@@ -21,8 +24,9 @@ export default function Hero() {
 
       <div className="relative z-10 w-full grid md:grid-cols-12 gap-8 md:gap-8 items-center">
         
-        {/* Left Column: Introduction and action buttons */}
+        {/* Left Section: Personal introduction and social links */}
         <div className="md:col-span-7">
+          
           {/* Status badge */}
           <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border text-xs sm:text-sm font-medium mb-5 shadow-md bg-slate-800/90 border-indigo-500/40 text-indigo-200 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
@@ -37,17 +41,20 @@ export default function Hero() {
             <span className="block text-white uppercase drop-shadow-md mb-1 tracking-tight">
               LALITA
             </span>
-            <span className="block text-transparent uppercase tracking-wider text-5xl sm:text-7xl md:text-8xl font-black" style={{ WebkitTextStroke: '2px #a855f7', textShadow: '0 0 25px rgba(168, 85, 247, 0.4)' }}>
+            <span 
+              className="block text-transparent uppercase tracking-wider text-5xl sm:text-7xl md:text-8xl font-black" 
+              style={{ WebkitTextStroke: '2px #a855f7', textShadow: '0 0 25px rgba(168, 85, 247, 0.4)' }}
+            >
               BHOI.
             </span>
           </h1>
           
-          {/* Theory description */}
+          {/* Brief bio description */}
           <p className="text-base sm:text-lg max-w-xl mb-8 leading-relaxed text-slate-300 font-normal">
             MCA student with hands-on practice in React, Node.js, Python, and SQL. Deeply interested in software development and seeking internship opportunities to build scalable, full-stack applications.
           </p>
 
-          {/* Action buttons with glowing hover effects */}
+          {/* Action buttons with glow hover effects */}
           <div className="flex flex-wrap items-center gap-3">
             <a 
               href="#projects" 
@@ -93,37 +100,27 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column: Balanced & Floating Code Editor Mockup (Centered better into view) */}
-        <div className="hidden md:flex md:col-span-5 justify-center md:justify-center lg:justify-end">
-          <div className="w-full max-w-md bg-slate-950/85 border border-slate-800 rounded-2xl p-5 shadow-2xl backdrop-blur-md relative overflow-hidden animate-float group hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+        {/* Right Section: Profile Photo Display */}
+        <div className="hidden md:flex md:col-span-5 justify-center md:justify-center lg:justify-end items-center relative group">
+          
+          {/* Subtle background glow effect behind image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-3xl group-hover:from-indigo-500/30 group-hover:to-purple-500/40 transition-all duration-500"></div>
+
+          {/* Floating profile image container */}
+          <div className="relative animate-float transition-all duration-500 group-hover:scale-105">
+            <img 
+              src={profileImg} 
+              alt="Lalita Bhoi - Full Stack Developer" 
+              className="w-full max-w-sm md:max-w-md aspect-square object-cover rounded-3xl shadow-2xl border-4 border-slate-800/80 group-hover:border-purple-500/60 backdrop-blur-sm transition-all duration-500 shadow-purple-900/20"
+            />
             
-            {/* Window Top Bar (Mac style dots) */}
-            <div className="flex items-center space-x-2 mb-3 pb-2.5 border-b border-slate-800/80">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
-              <span className="text-xs text-slate-500 font-mono ml-2">lalita-profile.jsx</span>
+            {/* Soft overlay on photo for better contrast */}
+            <div className="absolute inset-0 rounded-3xl bg-slate-950/10 group-hover:bg-transparent transition-all duration-500"></div>
+          
+            {/* Status badge on bottom corner */}
+            <div className="absolute -bottom-4 -right-4 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-[11px] font-medium backdrop-blur-lg animate-pulse shadow-lg">
+              ✨ Open to Work
             </div>
-
-            {/* Code Content */}
-            <div className="font-mono text-xs text-slate-300 space-y-1.5">
-              <p><span className="text-purple-400">const</span> <span className="text-blue-400">developer</span> = &#123;</p>
-              <p className="pl-4"><span className="text-indigo-300">name</span>: <span className="text-green-400">"Lalita Bhoi"</span>,</p>
-              <p className="pl-4"><span className="text-indigo-300">role</span>: <span className="text-green-400">"MCA Student"</span>,</p>
-              <p className="pl-4"><span className="text-indigo-300">stack</span>: [<span className="text-green-400">"React"</span>, <span className="text-green-400">"Node"</span>, <span className="text-green-400">"Python"</span>],</p>
-              <p className="pl-4"><span className="text-indigo-300">focus</span>: <span className="text-green-400">"Full-Stack Dev"</span>,</p>
-              <p className="pl-4"><span className="text-indigo-300">status</span>: <span className="text-green-400">"Seeking Internship"</span></p>
-              <p>&#125;;</p>
-            </div>
-
-            {/* Bottom status bar inside card */}
-            <div className="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between">
-              <span className="text-[11px] text-slate-500 italic">// ready for deployment</span>
-              <div className="px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-[11px] font-medium animate-pulse">
-                ✨ Open to Work
-              </div>
-            </div>
-
           </div>
         </div>
 
